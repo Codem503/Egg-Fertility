@@ -1,1 +1,14 @@
+#include <Stepper.h>
 
+const int stepsPerRevolution = 2048;
+
+// IN1, IN3, IN2, IN4
+Stepper myStepper(stepsPerRevolution, 8, 10, 9, 11);
+
+void setup() {
+  myStepper.setSpeed(19); // adjust speed (10–20 recommended)
+}
+
+void loop() {
+  myStepper.step(1);  // keep stepping forever
+}
